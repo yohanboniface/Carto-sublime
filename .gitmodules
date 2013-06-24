@@ -1,0 +1,6 @@
+[submodule "ext/mapnik-reference"]
+	path = ext/mapnik-reference
+	url = https://github.com/mapnik/mapnik-reference.git
+[submodule "ext/carto"]
+	path = ext/carto
+	url = https://github.com/mapbox/carto.git
