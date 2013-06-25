@@ -35,9 +35,19 @@ class CartoCSSProperty(object):
         return valid_values
 
     @property
+    def default(self):
+        return 'default-value' in self.prop and self.prop['default-value'] or ""
+
+    @property
+    def default_meaning(self):
+        return 'default-meaning' in self.prop and self.prop['default-meaning'] or ""
+
+    @property
     def doc(self):
         doc = self.prop['doc']
         doc = "%s\nValid values: %s" % (doc, ", ".join(self.valid_values))
+        if self.default:
+            doc = "%s\nDefault: %s (%s)" % (doc, self.default, self.default_meaning)
         return doc
 
 
