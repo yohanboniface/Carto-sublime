@@ -1,0 +1,2 @@
+generate:
+	node bin/generate

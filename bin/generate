@@ -1,19 +1,16 @@
 #!/usr/bin/env node
 
-// from https://github.com/mapbox/carto/blob/master/build/syntaxgenerate
-
 var path = require('path'),
     fs = require('fs'),
     _ = require('underscore')._,
-    carto = require('carto');
-
-var color_names = _.keys(carto.tree.Reference.data.colors);
-var property_names = _.reduce(carto.tree.Reference.data.symbolizers, function (memo, s) {
+    ref = require('mapnik-reference').version['3.0.0'];
+var color_names = _.keys(ref.colors);
+var property_names = _.reduce(ref.symbolizers, function (memo, s) {
     var props = _.values(_.pick(_.values(s), 'css'));
     memo = memo.concat(_.reduce(s, function (m, t) {if(t.css) {m=m.concat([t.css]);} return m;}, []));
     return memo;
 }, []);
-var keyword_names = _.uniq(_.reduce(carto.tree.Reference.data.symbolizers,
+var keyword_names = _.uniq(_.reduce(ref.symbolizers,
     function(memo, s) {
     for (var i in s) {
         if (_.isArray(s[i].type)) {
@@ -23,12 +20,14 @@ var keyword_names = _.uniq(_.reduce(carto.tree.Reference.data.symbolizers,
     return memo;
 }, []));
 
-var tm_tmpl = fs.readFileSync(path.join(__dirname, 'template.xml'), 'utf-8'),
-    tm_tmpxml = _.template(tm_tmpl, {
+var template = fs.readFileSync(path.join(__dirname, 'template.xml'), 'utf-8');
+template = _.template(template);
+template = template({
     color_names: color_names.filter(function(a) { return a; }).join('|'),
     keyword_names: keyword_names.filter(function(a) { return a; }).join('|'),
     property_names: property_names.filter(function(a) { return a; }).join('|')
 });
-fs.writeFile('Carto.tmLanguage', tm_tmpxml, function(err) {
-    if (!err) console.log('tmLanguage created');
+fs.writeFile('Carto.tmLanguage', template, function(err) {
+    if (err) throw err;
+    console.log('Carto.tmLanguage updated');
 });
