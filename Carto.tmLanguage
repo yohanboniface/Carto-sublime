@@ -268,7 +268,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(clear|src|dst|src-over|dst-over|src-in|dst-in|src-out|dst-out|src-atop|dst-atop|xor|plus|minus|multiply|divide|screen|overlay|darken|lighten|color-dodge|color-burn|linear-dodge|linear-burn|hard-light|soft-light|difference|exclusion|contrast|invert|invert-rgb|grain-merge|grain-extract|hue|saturation|color|value|power|linear|none|threshold|radial-distance|zhao-saalfeld|visvalingam-whyatt|miter|round|bevel|butt|square|full|fast|point|line|interior|vertex-first|vertex-last|each|whole|largest|arrow|ellipse|vertex|left|middle|right|auto|top|bottom|dummy|simple|list|uppercase|lowercase|capitalize|center|global|local|near|bilinear|bicubic|spline16|spline36|hanning|hamming|hermite|kaiser|quadric|catrom|gaussian|bessel|mitchell|sinc|lanczos|blackman|discrete|exact|centroid|adjust)\b</string>
+			<string>\b(clear|src|dst|src-over|dst-over|src-in|dst-in|src-out|dst-out|src-atop|dst-atop|xor|plus|minus|multiply|divide|screen|overlay|darken|lighten|color-dodge|color-burn|linear-dodge|linear-burn|hard-light|soft-light|difference|exclusion|contrast|invert|invert-rgb|grain-merge|grain-extract|hue|saturation|color|value|power|linear|none|threshold|radial-distance|zhao-saalfeld|visvalingam-whyatt|miter|round|bevel|butt|square|full|fast|point|line|interior|vertex-first|vertex-last|each|whole|largest|arrow|ellipse|vertex|left|middle|right|auto|top|bottom|dummy|simple|list|uppercase|lowercase|capitalize|center|global|local|near|bilinear|bicubic|spline16|spline36|hanning|hamming|hermite|kaiser|quadric|catrom|gaussian|bessel|mitchell|sinc|lanczos|blackman|discrete|exact|centroid|adjust|true|false)\b</string>
 			<key>name</key>
 			<string>support.constant.property-value.carto</string>
 		</dict>

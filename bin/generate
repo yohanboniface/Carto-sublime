@@ -19,6 +19,8 @@ var keyword_names = _.uniq(_.reduce(ref.symbolizers,
     }
     return memo;
 }, []));
+keyword_names.push('true');
+keyword_names.push('false');
 
 var template = fs.readFileSync(path.join(__dirname, 'template.xml'), 'utf-8');
 template = _.template(template);
