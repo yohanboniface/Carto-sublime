@@ -10,7 +10,8 @@ REF = {}
 COMMON_VALUES = {
     "color": ["rgb($1)", "rgba($1)", "hsl($1)", "hsla($1)", "transparent"],
     "uri": ["url($1)"],
-    "generic-family": ["serif", "sans-serif", "cursive", "fantasy", "monospace"]
+    "generic-family": ["serif", "sans-serif", "cursive", "fantasy",
+                       "monospace"]
 }
 
 
@@ -22,7 +23,8 @@ class CartoCSSProperty(object):
 
     @property
     def types(self):
-        return self.prop['type'] if isinstance(self.prop['type'], list) else [self.prop['type']]
+        return (self.prop['type'] if isinstance(self.prop['type'], list)
+                else [self.prop['type']])
 
     @property
     def valid_values(self):
@@ -36,18 +38,19 @@ class CartoCSSProperty(object):
 
     @property
     def default(self):
-        return 'default-value' in self.prop and self.prop['default-value'] or ""
+        return self.prop.get('default-value', '')
 
     @property
     def default_meaning(self):
-        return 'default-meaning' in self.prop and self.prop['default-meaning'] or ""
+        return self.prop.get('default-meaning', '')
 
     @property
     def doc(self):
         doc = self.prop['doc']
         doc = "%s\nValid values: %s" % (doc, ", ".join(self.valid_values))
         if self.default:
-            doc = "%s\nDefault: %s (%s)" % (doc, self.default, self.default_meaning)
+            doc = "%s\nDefault: %s (%s)" % (doc, self.default,
+                                            self.default_meaning)
         return doc
 
 
@@ -60,11 +63,11 @@ class CartoCSSReferenceMixin(object):
         return REF
 
     def populate_reference(self):
-        filepath = os.path.join(sublime.packages_path(), 'Carto', 'ext/mapnik-reference/latest/reference.json')
+        filepath = os.path.join(sublime.packages_path(), 'Carto', 'reference.json')
         with open(filepath) as f:
             ref = json.loads(f.read())
-            for element, properties in ref['symbolizers'].iteritems():
-                for name, prop in properties.iteritems():
+            for element, properties in ref['symbolizers'].items():
+                for name, prop in properties.items():
                     if 'css' in prop:
                         REF[prop['css']] = CartoCSSProperty(prop['css'], prop, element)
 
@@ -124,7 +127,7 @@ class CSSCompletions(CartoCSSReferenceMixin, sublime_plugin.EventListener):
 
     def get_props(self):
         props = {}
-        for name, obj in self.REF.iteritems():
+        for name, obj in self.REF.items():
             props[name] = obj.valid_values
         return props
 
