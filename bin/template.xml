@@ -205,7 +205,7 @@
 				<key>8</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.separator.operator.carto</string>
+					<string>keyword.operator.carto</string>
 				</dict>
 				<key>9</key>
 				<dict>
@@ -214,7 +214,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\[)\s*(?:(zoom)|((")(?:[^"\\]|\\.)*(")|(')(?:[^'\\]|\\.)*(')|[a-zA-Z0-9_][a-zA-Z0-9_-]*))\s*(!?=|&gt;=?|&lt;=?)\s*(?:(\d+)|((")(?:[^"\\]|\\.)*(")|(')(?:[^'\\]|\\.)*(')|[a-zA-Z0-9_][a-zA-Z0-9_-]*))\s*(\])</string>
+			<string>(\[)\s*(?:(zoom)|((")(?:[^"\\]|\\.)*(")|(')(?:[^'\\]|\\.)*(')|[a-zA-Z0-9_][a-zA-Z0-9_-]*))\s*(!?=|&gt;=?|&lt;=?|=~)\s*(?:(\d+)|((")(?:[^"\\]|\\.)*(")|(')(?:[^'\\]|\\.)*(')|[a-zA-Z0-9_][a-zA-Z0-9_-]*))\s*(\])</string>
 			<key>name</key>
 			<string>meta.attribute-selector.carto</string>
 		</dict>
@@ -336,12 +336,6 @@
 			<string>@[a-zA-Z0-9_-][\w-]*</string>
 			<key>name</key>
 			<string>variable.other.carto</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\$|%|&amp;|\*|\-\-|\-|\+\+|\+|~|===|==|=|!=|!==|&lt;=|&gt;=|&lt;&lt;=|&gt;&gt;=|&gt;&gt;&gt;=|&lt;&gt;|&lt;|&gt;|!|&amp;&amp;|\|\||\?\:|\*=|(?&lt;!\()/=|%=|\+=|\-=|&amp;=|\^=|\/\b</string>
-			<key>name</key>
-			<string>keyword.operator.carto</string>
 		</dict>
 		<dict>
 			<key>match</key>
