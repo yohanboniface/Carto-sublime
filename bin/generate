@@ -21,6 +21,10 @@ var keyword_names = _.uniq(_.reduce(ref.symbolizers,
 }, []));
 keyword_names.push('true');
 keyword_names.push('false');
+// Longuer ones before, so "dst" doesn't match before "dst-over"
+keyword_names.sort(function (a, b) {
+    return b.length - a.length;
+});
 
 var template = fs.readFileSync(path.join(__dirname, 'template.xml'), 'utf-8');
 template = _.template(template);

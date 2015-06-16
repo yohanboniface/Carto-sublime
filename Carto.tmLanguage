@@ -287,7 +287,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(clear|src|dst|src-over|dst-over|src-in|dst-in|src-out|dst-out|src-atop|dst-atop|xor|plus|minus|multiply|divide|screen|overlay|darken|lighten|color-dodge|color-burn|linear-dodge|linear-burn|hard-light|soft-light|difference|exclusion|contrast|invert|invert-rgb|grain-merge|grain-extract|hue|saturation|color|value|power|linear|none|threshold|radial-distance|zhao-saalfeld|visvalingam-whyatt|miter|round|bevel|butt|square|full|fast|point|line|interior|vertex-first|vertex-last|each|whole|largest|arrow|ellipse|vertex|left|middle|right|auto|top|bottom|dummy|simple|list|uppercase|lowercase|capitalize|center|global|local|near|bilinear|bicubic|spline16|spline36|hanning|hamming|hermite|kaiser|quadric|catrom|gaussian|bessel|mitchell|sinc|lanczos|blackman|discrete|exact|centroid|adjust|true|false)\b</string>
+			<string>\b(visvalingam-whyatt|radial-distance|zhao-saalfeld|grain-extract|vertex-first|linear-dodge|vertex-last|color-dodge|linear-burn|grain-merge|hard-light|capitalize|difference|saturation|invert-rgb|soft-light|color-burn|exclusion|uppercase|lowercase|threshold|blackman|multiply|dst-over|spline16|contrast|mitchell|bilinear|interior|gaussian|discrete|spline36|src-over|src-atop|dst-atop|centroid|quadric|bicubic|lighten|overlay|largest|ellipse|lanczos|hermite|hamming|dst-out|src-out|hanning|middle|vertex|adjust|linear|kaiser|darken|bottom|simple|square|divide|screen|catrom|center|global|invert|dst-in|bessel|src-in|clear|miter|dummy|round|bevel|whole|false|arrow|exact|minus|local|color|point|right|value|power|sinc|near|true|auto|left|each|line|plus|full|list|butt|none|fast|hue|src|xor|dst|top)\b</string>
 			<key>name</key>
 			<string>support.constant.property-value.carto</string>
 		</dict>
